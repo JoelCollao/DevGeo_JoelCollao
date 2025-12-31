@@ -1,1120 +1,1148 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>Portafolio Joel Collao DevGeo</title>
+    <meta name="description" content="Joel Collao - Desarrollador Full Stack especializado en GIS, Cloud Computing y Inteligencia Artificial" />
+    <meta name="author" content="Joel Collao" />
+    <title>Joel Collao - Developer | GIS | Cloud | AI Specialist</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Font Awesome icons (free version)-->
-    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/3f557beaf7.js" crossorigin="anonymous"></script>
-
+    <script src="https://use.fontawesome.com/releases/v6.4.0/js/all.js" crossorigin="anonymous"></script>
+    
     <!-- Google fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
+    
+    <!-- Custom modern styles -->
+    <style>
+        :root {
+            --primary-color: #0066cc;
+            --secondary-color: #00cc99;
+            --accent-color: #ff6b35;
+            --dark-bg: #0a0e1a;
+            --light-bg: #f8fafc;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --navbar-height: 70px; /* Definir altura fija del navbar */
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            padding-top: var(--navbar-height); /* Compensar altura fija del navbar */
+        }
+        
+        .code-font {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Professional Navbar Styles - Reducido */
+        .navbar {
+            background: rgba(10, 14, 26, 0.95) !important;
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            padding: 0.5rem 0; /* Reducido de 1rem a 0.5rem */
+            height: var(--navbar-height);
+        }
+
+        .navbar.scrolled {
+            background: rgba(10, 14, 26, 0.98) !important;
+            padding: 0.4rem 0; /* Reducido de 0.75rem a 0.4rem */
+        }
+
+        .navbar-brand {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            font-size: 1.3rem; /* Reducido de 1.5rem a 1.3rem */
+            letter-spacing: -0.02em;
+            color: #ffffff !important;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .navbar-brand:hover {
+            color: var(--secondary-color) !important;
+            transform: translateY(-2px);
+        }
+
+        .navbar-brand i {
+            color: var(--primary-color);
+            margin-right: 0.4rem; /* Reducido de 0.5rem a 0.4rem */
+            font-size: 1.1rem; /* Reducido de 1.2rem a 1.1rem */
+        }
+
+        .navbar-nav {
+            gap: 0.3rem; /* Reducido de 0.5rem a 0.3rem */
+        }
+
+        .navbar-nav .nav-link {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 0.9rem; /* Reducido de 0.95rem a 0.9rem */
+            color: rgba(255, 255, 255, 0.85) !important;
+            padding: 0.6rem 1rem !important; /* Reducido de 0.75rem 1.25rem */
+            border-radius: 6px; /* Reducido de 8px a 6px */
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            letter-spacing: 0.01em;
+            text-transform: none;
+        }
+
+        .navbar-nav .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            transform: translateX(-50%);
+            transition: width 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #ffffff !important;
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .navbar-nav .nav-link:hover::before {
+            width: 60%;
+        }
+
+        .navbar-nav .nav-link.active {
+            color: var(--secondary-color) !important;
+            background: rgba(0, 204, 153, 0.1);
+        }
+
+        .navbar-nav .nav-link.active::before {
+            width: 60%;
+        }
+
+        .navbar-toggler {
+            border: none;
+            padding: 0.4rem; /* Reducido de 0.5rem a 0.4rem */
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 6px; /* Reducido de 8px a 6px */
+            transition: all 0.3s ease;
+        }
+
+        .navbar-toggler:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+
+        .navbar-toggler i {
+            color: #ffffff;
+            font-size: 1rem; /* Reducido de 1.1rem a 1rem */
+        }
+
+        /* Mobile styles */
+        @media (max-width: 991.98px) {
+            .navbar-collapse {
+                background: rgba(10, 14, 26, 0.98);
+                border-radius: 10px; /* Reducido de 12px a 10px */
+                margin-top: 0.8rem; /* Reducido de 1rem a 0.8rem */
+                padding: 0.8rem; /* Reducido de 1rem a 0.8rem */
+                border: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .navbar-nav .nav-link {
+                font-size: 0.95rem; /* Reducido de 1rem a 0.95rem */
+                padding: 0.75rem 0.8rem !important; /* Reducido */
+                margin: 0.2rem 0; /* Reducido de 0.25rem a 0.2rem */
+                border-radius: 6px; /* Reducido de 8px a 6px */
+            }
+
+            .navbar-nav .nav-link::before {
+                display: none;
+            }
+        }
+
+        /* Ajuste para secciones - scroll offset */
+        section {
+            scroll-margin-top: calc(var(--navbar-height) + 20px);
+        }
+        
+        .modern-hero {
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #1e293b 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            margin-top: calc(-1 * var(--navbar-height)); /* Compensar el padding-top del body */
+            padding-top: var(--navbar-height); /* Añadir padding interno */
+        }
+        
+        .tech-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .tech-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .skill-badge {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            display: inline-block;
+            margin: 0.25rem;
+            transition: all 0.3s ease;
+        }
+        
+        .skill-badge:hover {
+            background: var(--secondary-color);
+            transform: scale(1.05);
+        }
+        
+        .project-card {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
 </head>
-
-
 
 <body id="page-top">
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="#page-top"><img src="assets/img/logos/chalkboard-teacher-solid_LOGO1.svg" width="50" height="600" />DEVGEO</a>
-            
-            <a class="navbar-brand" href="#page-top"><img src="assets/img/logos/code-solid_LOGO1.svg" width="50" height="600" /></a>
+            <a class="navbar-brand" href="#page-top">
+                <i class="fas fa-code"></i>Joel.dev
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                Menu
-                <i class="fas fa-bars ms-1"></i>
+                <i class="fas fa-bars"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="#services">Acerca de mi</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portafolio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">Experiencia</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#team">Skills</a></li>
-                   <!-- <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>-->
+                    <li class="nav-item"><a class="nav-link" href="#about">Sobre Mí</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Especialidades</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experiencia</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Tecnologías</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    <!-- Masthead-->
-    <header class="masthead">
-        <div class="container">
-            <div class="timeline-image">
-                <img class="rounded-circle img-fluid" src="assets/img/about/31.jpg" alt="..."/>               
-                <div class="masthead-heading">Hi¡</div>
-                <div class="masthead-heading ">
-                    <p class="text-border">
-                        <span class="typed"></span>
-                    </P>
 
-                    <div class="masthead-heading ">Developer Junior / GIS Analyst</div>
-                    <a class="btn btn-primary btn-xl text-uppercase" href="#services">Ver más</a>
+    <!-- Modern Hero Section-->
+    <section class="modern-hero" id="home">
+        <div class="container position-relative">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="text-start">
+                        <h1 class="display-4 fw-bold mb-3">
+                            Hola, soy <span class="gradient-text">Joel Collao</span>
+                        </h1>
+                        <h2 class="h3 text-light mb-4 code-font">
+                            <span class="typed"></span>
+                        </h2>
+                        <p class="lead text-light opacity-75 mb-5">
+                            Desarrollador Full Stack especializado en soluciones GIS, Cloud Computing e Inteligencia Artificial. 
+                            Transformo ideas en aplicaciones innovadoras y escalables.
+                        </p>
+                        <div class="d-flex gap-3 flex-wrap">
+                            <a class="btn btn-primary btn-lg px-4" href="#portfolio">Servicios Profesionales</a>
+                            <a class="btn btn-outline-light btn-lg px-4" href="#contact">Contactar</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <center>
-                <audio controls  autoplay  loop>
-                    <source src="Music/Coldplay - Yellow Sub. Español.mp3"  type="audio/mp3">
-                </audio>
-                </center>
-        </div>
-    </header>
-
-
-  
-    <!-- Services-->
-    <section class="page-section" id="services">
-        <div class="container">
-            <div class="text-center">
-                <h2 class="section-heading">Pasión por la Tecnología</h2>
-                <h3 class="section-subheading text-muted">
-                    La tecnologia no es nada.Lo importante es que tengas fe en la gente, que sean basicamente buenas e
-                    inteligentes ,
-                    y si les das herramientas harán cosas maravillosas con ellas. <q>Steve Jobs</q></h3>
-
-            </div>
-            <div class="row text-center">
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <!--<i class="fas fa-circle fa-stack-2x text-primary"></i>-->
-                        <!-- <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>-->
-                        <!-- AQUI VA EL ICONO DE MI TECNOLOGIA -->
-                        <i class="fas fa-chalkboard-teacher"></i>
-
-
-                    </span>
-                    <h4 class="my-3">Tecnología</h4>
-                    <p class="text-muted">Me gusta estar al día sobre las Nuevas Tecnologías</p>
-                </div>
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <!--<i class="fas fa-circle fa-stack-2x text-primary"></i>-->
-                        <!-- <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>-->
-                        <!-- AQUI VA EL ICONO DE MI PROGRAMACION -->
-
-
-                        <i class="fas fa-code"></i>
-                    </span>
-                    <h4 class="my-3">Programación</h4>
-                    <p class="text-muted">Aprendizaje continuo en desarrollo de aplicaciones
-                        en BackEnd y Frontend</p>
-                </div>
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-
-                        <!-- AQUI VA EL ICONO DE MI BICICLETA -->
-                        <i class="fas fa-bicycle fa-stack-1x"></i>
-
-                    </span>
-                    <h4 class="my-3">Deportista</h4>
-                    <p class="text-muted">Soy Apasionado del Ciclismo.</p>
+                <div class="col-lg-6 text-center">
+                    <div class="position-relative">
+                        <img class="img-fluid rounded-circle shadow-lg" src="assets/img/about/31.png" alt="Joel Collao" 
+                             style="width: 300px; height: 300px; object-fit: cover; border: 4px solid rgba(255,255,255,0.2);"/>
+                        
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Portfolio Grid-->
-    <section class="page-section bg-light" id="portfolio">
+
+    <!-- About Section-->
+    <section class="py-5" id="about">
         <div class="container">
-            <div class="text-center">
-                <h2 class="section-heading">Portafolio</h2>
-                <h3 class="section-subheading text-muted">Proyectos realizados</h3>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-sm-6 mb-4">
-
-
-
-
-
-
-                    <!-- Portfolio item 1-->
-                    <div class="portfolio-item">
-                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
-                            <div class="portfolio-hover">
-                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/1.JPG" alt="..." />
-                        </a>
-                        <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">CM2</div>
-                            <div class="portfolio-caption-subheading text-muted">website</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 mb-4">
-
-
-
-                    <!-- Portfolio item 2-->
-                    <div class="portfolio-item">
-                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
-                            <div class="portfolio-hover">
-                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/2.JPG" alt="..." />
-                        </a>
-                        <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">CM2</div>
-                            <div class="portfolio-caption-subheading text-muted">Sistema Facturación</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 mb-4">
-
-
-
-                    <!-- Portfolio item 3-->
-                    <div class="portfolio-item">
-                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
-                            <div class="portfolio-hover">
-                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/3.JPG" alt="..." />
-                        </a>
-                        <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">CM2</div>
-                            <div class="portfolio-caption-subheading text-muted">Aplicativo Reseñas Geodesicás</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-
-
-
-                    <!-- Portfolio item 4
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="assets/img/portfolio/4.jpg" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Lines</div>
-                                <div class="portfolio-caption-subheading text-muted">Branding</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">-->
-
-                     
-
-
-                    <!-- Portfolio item 5
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="assets/img/portfolio/5.jpg" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Southwest</div>
-                                <div class="portfolio-caption-subheading text-muted">Website Design</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">-->
-
-
-
-                    <!-- Portfolio item 6
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="assets/img/portfolio/6.jpg" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Window</div>
-                                <div class="portfolio-caption-subheading text-muted">Photography</div>
-                            </div>
-                        </div>-->
-
-
-
-
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- About-->
-    <section class="page-section" id="about">
-        <div class="container">
-            <div class="text-center">
-                <h2 class="section-heading">Experiencia Profesional</h2>
-                <h3 class="section-subheading text-muted">Línea Temporal de Experiencia.</h3>
-            </div>
-            <ul class="timeline">
-         
-                <!-- AGREGACION DE NUEVA EXPERIENCIA -->
-                <li class="timeline-inverted">
-                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/NTTDATA.png"
-                            alt="..." /></div>
-                    <div class="timeline-panel">
-                        <div class="timeline-heading">
-                            <h4>Febr 2022 - Actualidad </h4>
-                            <h4 class="subheading">NTTDATA</h4>
-                            <h3>Developer Oracle .Net</h3>
-                        </div>
-                        <div class="timeline-body">
-                            <p class="text-muted">
-                            <ul>• Diseño</ul>
-                            <ul>• Desarrollo</ul>
-                            <ul>• Pruebas Unitarias</ul>
-                            <ul>• Documentación</ul>
-                            </p>
-                        </div>
-                    </div>
-                </li>
-
-                <!--FIN DE AGREGACION DE NUEVA EXPERIENCIA -->
-
-
-                <li>
-                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/1.jpg"
-                            alt="..." /></div>
-                    <div class="timeline-panel">
-                        <div class="timeline-heading">
-                            <h4>Mar 2021- Sep 2021</h4>
-                            <h4 class="subheading">CM2 INGENERIA</h4>
-                            <h3>Programador.Net</h3>
-                        </div>
-                        <div class="timeline-body">
-                            <p class="text-muted">
-                            <ul>
-                                • Acondicionamiento de Base de Datos en SQL Server
-                            </ul>
-                            <ul>
-                                • Programación .Net de un Aplicativo de Reporte de Fichas Topográficas
-                            </ul>
-                            <ul>
-                                • Programación C# del Sistema de Facturación de la Empresa
-                            </ul>
-                            <ul>
-                                • Diseño de Diagrama de Base de datos
-                            </ul>
-                            <ul>
-                                • Desarrollo de Pagina Web de la empresa
-                            </ul>
-                            <ul>
-                                • Automatización de Procesos usando Python
-                            </ul>
-                            </p>
-                        </div>
-                    </div>
-                </li>
-
-
-                <li class="timeline-inverted">
-                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/2.png"
-                            alt="..." /></div>
-                    <div class="timeline-panel">
-                        <div class="timeline-heading">
-                            <h4>Jul 2019 - Sep 2020</h4>
-                            <h4 class="subheading">AECOM</h4>
-                            <h3>Especialista en Sistemas de Información geográfica</h3>
-                        </div>
-                        <div class="timeline-body">
-                            <p class="text-muted">
-
-                            <ul>
-                                • Producción de shapes, metadatos, geodatabases y archivos mxd, asegurando
-                                que los atributos, coordenadas, geometría y demás características de los archivos,
-                                cumplan con las Especificaciones Técnicas para el tratamiento de la Información
-                                Geográfica y Cartográfica aplicada a PAT, PDM Y PDU en el Marco de la Reconstrucción
-                                con Cambios
-                            </ul>
-                            <ul>
-                                • Coordinar la codificación y nomenclatura de todos los mapas, tomando como
-                                referencia el Anexo A: Contenidos de los planes PAT, PDM, PDU, su codificación y
-                                vinculación con los Indicadores Urbanos y Territoriales para efectos de presentación
-                                de mapas y planos.
-                            </ul>
-
-                            </p>
-                        </div>
-                    </div>
-                </li>
-
-                <li>
-                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/3.png"
-                            alt="..." /></div>
-                    <div class="timeline-panel">
-                        <div class="timeline-heading">
-                            <h4>Ago 2019 - Dic 2019</h4>
-                            <h4 class="subheading">INSTITUTO GEOGRAFICO NACIONAL</h4>
-                            <h3>Especialista en Sistemas de Información geográfica</h3>
-                        </div>
-                        <div class="timeline-body">
-                            <p class="text-muted">
-                            <ul>
-                                • Elaboración de cartografía del Departamento de La Libertad
-                            </ul>
-                            <ul>
-                                • Desarrollo de Base de Datos para la Visor Web
-                            </ul>
-                            <ul>
-                                • Digitalización de las entidades Geográficas.
-                            </ul>
-
-                            </p>
-                        </div>
-                    </div>
-                </li>
-
-
-
-                <li class="timeline-inverted">
-                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/AEROCAM.jpg"
-                            alt="..." /></div>
-                    <div class="timeline-panel">
-                        <div class="timeline-heading">
-                            <h4>Set 2017 - Oct 2017</h4>
-                            <h4 class="subheading">AEROCAM</h4>
-                            <h3>Procesador de Imágenes RPAS</h3>
-                        </div>
-                        <div class="timeline-body">
-                            <p class="text-muted">
-
-                            <ul>
-                                • Asistir a los pilotos de RPAS durante los vuelos fotogramétricos
-                            </ul>
-                            <ul>
-                                • Apoyar en el plan de trabajo y salidas de campo.
-                            </ul>
-                            <ul>
-                                • Procesar las Imágenes tomadas de RPAS.
-                            </ul>
-                            <ul>
-                                • Generación de ortofoto.
-                            </ul>
-
-                            </p>
-                        </div>
-                    </div>
-                </li>
-
-
-
-
-                <li>
-                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/CORSUYO.jpg"
-                            alt="..." /></div>
-                    <div class="timeline-panel">
-                        <div class="timeline-heading">
-                            <h4>Feb 2019 - Jul 2019</h4>
-                            <h4 class="subheading">CORSUYO</h4>
-                            <h3>Especialista en Sistemas de Información geográfica</h3>
-                        </div>
-                        <div class="timeline-body">
-                            <p class="text-muted">
-                            <ul>
-                                • Revisor GIS en los Planes de Acondicionamiento Territorial (PAT), Planes de Desarrollo
-                                Urbano
-                                (PDU) y Planes de Desarrollo Metropolitano (PDM) de la Región de la Libertad; dentro de
-                                mis Funciones
-                                la Recolección de la Información y Preparación de la documentación cartográfica del
-                                proyecto para
-                                los entregables según especificaciones técnicas GIS y Base de Datos, coordinación
-                                permanente con los
-                                especialistas GIS
-                            </ul>
-
-
-                            </p>
-                        </div>
-                    </div>
-                </li>
-
-
-
-
-                <li class="timeline-inverted">
-                    <div class="timeline-image"><img class="rounded-circle img-fluid"
-                            src="assets/img/about/GEOSERVICE.png" alt="..." /></div>
-                    <div class="timeline-panel">
-                        <div class="timeline-heading">
-                            <h4>Jul 2018 - Jul 2019</h4>
-                            <h4 class="subheading">GEOSERVICE PERÚ</h4>
-                            <h3>Analista GIS</h3>
-                        </div>
-                        <div class="timeline-body">
-                            <p class="text-muted">
-
-                            <ul>
-                                • Procesamiento de Imágenes Satelitales
-                            </ul>
-                            <ul>
-                                • Actualización y geolocalización de la información geográfica.
-                            </ul>
-                            <ul>
-                                • Generación de Base de datos.
-                            </ul>
-
-
-                            </p>
-                        </div>
-                    </div>
-                </li>
-
-
-
-                <li>
-                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/3.png"
-                            alt="..." /></div>
-                    <div class="timeline-panel">
-                        <div class="timeline-heading">
-                            <h4>Ago 2014 - Dic 2018</h4>
-                            <h4 class="subheading">INSTITUTO GEOGRÁFICO NACIONAL / NGA</h4>
-                            <h3>Especialista en Sistemas de Información geográfica</h3>
-                        </div>
-                        <div class="timeline-body">
-                            <p class="text-muted">
-
-                            <ul>
-                                • Realizar el proceso de orto rectificación y equilibrio radiométrico de las imágenes.
-                            </ul>
-                            <ul>
-                                • Elaborar el modelo digital de terreno (MDT) a partir de los datos altimétricos de los
-                                archivos de restitución de acuerdo con la escala de producción Generación de Base de
-                                datos.
-                            </ul>
-                            <ul>
-                                • Elaboración de GeodataBase en base al manual del MGCP
-                            </ul>
-                            <ul>
-                                • Colección de las entidades geográficas a partir de las imágenes satelitales QuickBirck
-                                para la generación de Cartográfia 1:25 000 según especificaciones técnicas
-                                cartográficas.
-                            </ul>
-
-
-
-
-
-
-
-                            </p>
-                        </div>
-                    </div>
-                </li>
-
-
-
-
-
-
-                <li class="timeline-inverted">
-                    <div class="timeline-image"><img class="rounded-circle img-fluid"
-                            src="assets/img/about/programador.jpg" alt="..." /></div>
-                    <h4>
-
-                    </h4>
-        </div>
-        </li>
-        </ul>
-        </div>
-    </section>
-    <!-- Team-->
-    <section class="page-section bg-light" id="team">
-        <div class="container">
-            <div class="text-center">
-                <h2 class="section-heading">Developer Skills - DevGeo</h2>
-                <img class="mx-auto rounded-circle" src="assets/img/logos/devgeo.png" alt="triangle with equal sides">
-            </div>
-
-            <!--       SECCION DE SKILSS                 -->
-
-
-            <div class=" row">
-
-                <div class="col-lg-3">
-                    <div class="team-member">
-                        <img src="equilateral.png" alt="triangle with equal sides"
-                            srcset="assets/img/logos/cuttlefish-brands.svg">
-                        <h5>C#</h5>
-                    </div>
-                </div>
-
-
-                <div class="col-lg-3">
-                    <div class="team-member">
-                        <img src="equilateral.png" alt="triangle with equal sides"
-                            srcset="assets/img/logos/code-solid.svg">
-                        <h5>Visual Studio Code</h5>
-                    </div>
-                </div>
-
-
-                <div class="col-lg-3">
-                    <div class="team-member">
-                        <img src="equilateral.png" alt="triangle with equal sides"
-                            srcset="assets/img/logos/coins-solid.svg">
-                        <h5>Bases de Datos SQL/MySQL</h5>
-                    </div>
-                </div>
-
-                <div class="col-lg-3">
-                    <div class="team-member">
-                        <img src="equilateral.png" alt="triangle with equal sides"
-                            srcset="assets/img/logos/css3-alt-brands.svg">
-                        <h5>CSS</h5>
-                    </div>
-                </div>
-
-
-            
-
-                <div class="col-lg-3">
-                    <div class="team-member">
-                        <img src="equilateral.png" alt="triangle with equal sides"
-                            srcset="assets/img/logos/github-brands.svg">
-                        <h5>GitHub</h5>
-                    </div>
-                </div>
-
-                <div class="col-lg-3">
-                    <div class="team-member">
-                        <img src="equilateral.png" alt="triangle with equal sides"
-                            srcset="assets/img/logos/html5-brands.svg">
-                        <h5>HTML 5</h5>
-                    </div>
-                </div>
-
-                <div class="col-lg-3">
-                    <div class="team-member">
-                        <img src="equilateral.png" alt="triangle with equal sides"
-                            srcset="assets/img/logos/java-brands.svg">
-                        <h5>Java</h5>
-                    </div>
-                </div>
-           
-
-
-
-
-           
-                <div class="col-lg-3">
-                    <div class="team-member">
-                        <img src="equilateral.png" alt="triangle with equal sides"
-                            srcset="assets/img/logos/code-solid.svg">
-                        <h5>Visual Studio</h5>
-                    </div>
-                </div>
-
-
-              
-                    <div class="col-lg-3">
-                        <div class="team-member">
-                            <img src="equilateral.png" alt="triangle with equal sides"
-                                srcset="assets/img/logos/js-brands.svg">
-                            <h5>JavaScript</h5>
-                        </div>
-                    </div>
-    
-
-                  
-                        <div class="col-lg-3">
-                            <div class="team-member">
-                                <img src="equilateral.png" alt="triangle with equal sides"
-                                    srcset="assets/img/logos/php-brands.svg">
-                                <h5>PHP</h5>
-                            </div>
-                        </div>
-
-
-                       
-                            <div class="col-lg-3">
-                                <div class="team-member">
-                                    <img src="equilateral.png" alt="triangle with equal sides"
-                                        srcset="assets/img/logos/python-brands.svg">
-                                    <h5>Python</h5>
-                                </div>
-                            </div>
-
-
-                            
-                      
-                            <div class="col-lg-3">
-                                <div class="team-member">
-                                    <img src="equilateral.png" alt="triangle with equal sides"
-                                        srcset="assets/img/logos/r-project-brands.svg">
-                                    <h5>R</h5>
-                                </div>
-                            </div>
-            
-
-                               
-                     
-                            <div class="col-lg-3">
-                                <div class="team-member">
-                                    <img src="equilateral.png" alt="triangle with equal sides"
-                                        srcset="assets/img/logos/sass-brands.svg">
-                                    <h5>Sass</h5>
-                                </div>
-                            </div>
-
-
-                            <div class="col-lg-3">
-                                <div class="team-member">
-                                    <img src="equilateral.png" alt="triangle with equal sides"
-                                        srcset="assets/img/logos/wordpress-brands.svg">
-                                    <h5>Worspress</h5>
-                                </div>
-                            </div>
-                    </div>
-
-
-
-
-                <!--
-                    <div class="col-lg-4">
-                        <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="assets/img/team/2.jpg" alt="..." />
-                            <h4>Diana Petersen</h4>
-                            <p class="text-muted">Lead Marketer</p>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    -->
-
-                <!--
-                    <div class="col-lg-4">
-                        <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="assets/img/team/3.jpg" alt="..." />
-                            <h4>Larry Parker</h4>
-                            <p class="text-muted">Lead Developer</p>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    -->
-            </div>
-
-
-
-
-
-
-            <div class="row">
-                <div class="col-lg-8 mx-auto text-center">
-                    <p class="large text-muted"><br>
-                        JOEL PETER COLLAO ACRA<br>
-            Asociación Valle Chillón. N LT.10, Puente Piedra-Lima<br>	
-                geoinformatico.jc@gmail.com
-                       
-
-
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="section-heading mb-4">Sobre Mí</h2>
+                    <p class="lead text-muted mb-4">
+                        Soy un profesional apasionado por la tecnología con experiencia en desarrollo de software, 
+                        análisis geoespacial y soluciones en la nube. Mi enfoque está en crear aplicaciones que 
+                        resuelvan problemas reales utilizando las últimas tecnologías.
                     </p>
+                    <div class="row text-center">
+                        <div class="col-md-3 mb-3">
+                            <div class="h2 text-primary">5+</div>
+                            <div class="text-muted">Años de Experiencia</div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="h2 text-primary">50+</div>
+                            <div class="text-muted">Proyectos Completados</div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="h2 text-primary">15+</div>
+                            <div class="text-muted">Tecnologías</div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="h2 text-primary">100%</div>
+                            <div class="text-muted">Satisfacción Cliente</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Clients-->
 
-    <!--
-    <div class="py-5">
+    <!-- Services Section-->
+    <section class="py-5 bg-light" id="services">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-3 col-sm-6 my-3">
-                    <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="assets/img/logos/microsoft.svg"
-                            alt="..." /></a>
+            <div class="text-center mb-5">
+                <h2 class="section-heading">Mis Especialidades</h2>
+                <p class="text-muted">Servicios profesionales en tecnologías de vanguardia</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="tech-card text-center h-100">
+                        <div class="mb-4">
+                            <i class="fas fa-laptop-code fa-3x text-primary"></i>
+                        </div>
+                        <h4 class="mb-3">Desarrollo Full Stack</h4>
+                        <p class="text-muted mb-4">
+                            Desarrollo de aplicaciones web y móviles usando tecnologías modernas como React, Node.js, 
+                            .NET Core y bases de datos relacionales y NoSQL.
+                        </p>
+                        <div class="d-flex flex-wrap justify-content-center gap-2">
+                            <span class="skill-badge">React</span>
+                            <span class="skill-badge">Node.js</span>
+                            <span class="skill-badge">.NET</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-3 col-sm-6 my-3">
-                    <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="assets/img/logos/google.svg"
-                            alt="..." /></a>
+                <div class="col-lg-3 col-md-6">
+                    <div class="tech-card text-center h-100">
+                        <div class="mb-4">
+                            <i class="fas fa-globe fa-3x text-success"></i>
+                        </div>
+                        <h4 class="mb-3">Sistemas GIS</h4>
+                        <p class="text-muted mb-4">
+                            Desarrollo de aplicaciones geoespaciales, análisis de datos geográficos y creación 
+                            de mapas interactivos usando ArcGIS, QGIS y tecnologías web.
+                        </p>
+                        <div class="d-flex flex-wrap justify-content-center gap-2">
+                            <span class="skill-badge">ArcGIS</span>
+                            <span class="skill-badge">QGIS</span>
+                            <span class="skill-badge">Leaflet</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-3 col-sm-6 my-3">
-                    <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="assets/img/logos/facebook.svg"
-                            alt="..." /></a>
+                <div class="col-lg-3 col-md-6">
+                    <div class="tech-card text-center h-100">
+                        <div class="mb-4">
+                            <i class="fas fa-cloud fa-3x text-info"></i>
+                        </div>
+                        <h4 class="mb-3">Cloud Computing</h4>
+                        <p class="text-muted mb-4">
+                            Arquitectura y despliegue de soluciones en la nube usando AWS, Azure y Google Cloud. 
+                            Microservicios, containerización y DevOps.
+                        </p>
+                        <div class="d-flex flex-wrap justify-content-center gap-2">
+                            <span class="skill-badge">AWS</span>
+                            <span class="skill-badge">Azure</span>
+                            <span class="skill-badge">Docker</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-3 col-sm-6 my-3">
-                    <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="assets/img/logos/ibm.svg"
-                            alt="..." /></a>
+                <div class="col-lg-3 col-md-6">
+                    <div class="tech-card text-center h-100">
+                        <div class="mb-4">
+                            <i class="fas fa-brain fa-3x text-warning"></i>
+                        </div>
+                        <h4 class="mb-3">Inteligencia Artificial</h4>
+                        <p class="text-muted mb-4">
+                            Desarrollo de modelos de machine learning, procesamiento de lenguaje natural y 
+                            análisis predictivo usando Python, TensorFlow y frameworks modernos.
+                        </p>
+                        <div class="d-flex flex-wrap justify-content-center gap-2">
+                            <span class="skill-badge">Python</span>
+                            <span class="skill-badge">TensorFlow</span>
+                            <span class="skill-badge">OpenAI</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
--->
-
-
-
-    <!-- Contact
-        <section class="page-section" id="contact">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Contact Us</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-                * * * * * * * * * * * * * * *
-                * * SB Forms Contact Form * *
-                * * * * * * * * * * * * * * *
-                This form is pre-integrated with SB Forms.
-                 To make this form functional, sign up at
-                 https://startbootstrap.com/solution/contact-forms
-                 to get an API token!
-                
-                
-                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                    <div class="row align-items-stretch mb-5">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <!-- Name input
-                                <input class="form-control" id="name" type="text" placeholder="Your Name *" data-sb-validations="required" />
-                                <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
-                            </div>
-                            <div class="form-group">
-                                <!-- Email address input
-                                <input class="form-control" id="email" type="email" placeholder="Your Email *" data-sb-validations="required,email" />
-                                <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                                <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
-                            </div>
-                            <div class="form-group mb-md-0">
-                                <!-- Phone number input
-                                <input class="form-control" id="phone" type="tel" placeholder="Your Phone *" data-sb-validations="required" />
-                                <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group form-group-textarea mb-md-0">
-                                <!-- Message input
-                                <textarea class="form-control" id="message" placeholder="Your Message *" data-sb-validations="required"></textarea>
-                                <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Submit success message
-                    <!---->
-    <!-- This is what your users will see when the form
-                    <!-- has successfully submitted
-                    <div class="d-none" id="submitSuccessMessage">
-                        <div class="text-center text-white mb-3">
-                            <div class="fw-bolder">Form submission successful!</div>
-                            To activate this form, sign up at
-                            <br />
-                            <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                        </div>
-                    </div>
-                    <!-- Submit error message
-                    <!---->
-    <!-- This is what your users will see when there is
-                    <!-- an error submitting the form
-                    <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
-                    <!-- Submit Button
-                    <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase disabled" id="submitButton" type="submit">Send Message</button></div>
-                </form>
-
-            -->
-
-
-
-
-
-
-
-    </div>
     </section>
+
+    <!-- Professional Services Section (replacing Portfolio)-->
+    <section class="py-5" id="portfolio">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-heading">🚀 Servicios Profesionales</h2>
+                <p class="text-muted">Soluciones tecnológicas especializadas para tu negocio</p>
+            </div>
+
+            <!-- GIS Services -->
+            <div class="mb-5">
+                <div class="row align-items-center mb-4">
+                    <div class="col-lg-8">
+                        <h3 class="gradient-text mb-2">🗺️ Servicios GIS – Geomática Aplicada</h3>
+                        <p class="lead text-muted">
+                            Soluciones geoespaciales diseñadas para optimizar decisiones, automatizar procesos y transformar datos en información estratégica.
+                        </p>
+                    </div>
+                    <div class="col-lg-4 text-lg-end">
+                        <i class="fas fa-globe fa-4x text-success opacity-75"></i>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <!-- Desarrollo GIS y Automatización -->
+                    <div class="col-lg-6 col-md-12">
+                        <div class="tech-card h-100">
+                            <div class="d-flex align-items-start mb-3">
+                                <div class="me-3">
+                                    <i class="fas fa-cogs fa-2x text-primary"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-2">🔹 Desarrollo GIS y Automatización</h5>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <div class="border-start border-3 border-primary ps-3 mb-3">
+                                    <h6 class="fw-bold mb-1">Automatización de procesos geoespaciales con Python</h6>
+                                    <p class="text-muted small mb-0">👉 Reduce tiempos operativos, elimina tareas repetitivas y mejora la precisión de los resultados.</p>
+                                </div>
+                                <div class="border-start border-3 border-success ps-3">
+                                    <h6 class="fw-bold mb-1">Procesamiento y análisis espacial avanzado</h6>
+                                    <p class="text-muted small mb-0">👉 Obtén información clara para una mejor toma de decisiones territoriales.</p>
+                                </div>
+                            </div>
+
+                            <div class="d-flex gap-2 flex-wrap">
+                                <span class="skill-badge">Python</span>
+                                <span class="skill-badge">ArcPy</span>
+                                <span class="skill-badge">GDAL</span>
+                                <span class="skill-badge">Geopandas</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bases de Datos Geoespaciales -->
+                    <div class="col-lg-6 col-md-12">
+                        <div class="tech-card h-100">
+                            <div class="d-flex align-items-start mb-3">
+                                <div class="me-3">
+                                    <i class="fas fa-database fa-2x text-info"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-2">🔹 Bases de Datos Geoespaciales</h5>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <div class="border-start border-3 border-info ps-3 mb-3">
+                                    <h6 class="fw-bold mb-1">Diseño, administración y optimización de Geodatabases</h6>
+                                    <p class="text-muted small mb-0">👉 Mayor rendimiento, seguridad y escalabilidad de tus datos espaciales.</p>
+                                </div>
+                                <div class="border-start border-3 border-warning ps-3">
+                                    <h6 class="fw-bold mb-1">Integración con PostgreSQL / PostGIS / SQL Server</h6>
+                                    <p class="text-muted small mb-0">👉 Centraliza tu información y garantiza consistencia entre sistemas.</p>
+                                </div>
+                            </div>
+
+                            <div class="d-flex gap-2 flex-wrap">
+                                <span class="skill-badge">PostGIS</span>
+                                <span class="skill-badge">SQL Server</span>
+                                <span class="skill-badge">ArcGIS Enterprise</span>
+                                <span class="skill-badge">PostgreSQL</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cartografía y Visualización -->
+                    <div class="col-lg-6 col-md-12">
+                        <div class="tech-card h-100">
+                            <div class="d-flex align-items-start mb-3">
+                                <div class="me-3">
+                                    <i class="fas fa-map fa-2x text-success"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-2">🔹 Cartografía y Visualización</h5>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <div class="border-start border-3 border-success ps-3 mb-3">
+                                    <h6 class="fw-bold mb-1">Diseño de mapas profesionales en ArcMap y ArcGIS Pro</h6>
+                                    <p class="text-muted small mb-0">👉 Mapas claros, precisos y visualmente atractivos para informes, proyectos o toma de decisiones.</p>
+                                </div>
+                                <div class="border-start border-3 border-danger ps-3">
+                                    <h6 class="fw-bold mb-1">Consultoría cartográfica personalizada</h6>
+                                    <p class="text-muted small mb-0">👉 Mejora la lectura, simbología y comunicación visual de tus mapas.</p>
+                                </div>
+                            </div>
+
+                            <div class="d-flex gap-2 flex-wrap">
+                                <span class="skill-badge">ArcGIS Pro</span>
+                                <span class="skill-badge">QGIS</span>
+                                <span class="skill-badge">Leaflet</span>
+                                <span class="skill-badge">Mapbox</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Consultoría GIS -->
+                    <div class="col-lg-6 col-md-12">
+                        <div class="tech-card h-100">
+                            <div class="d-flex align-items-start mb-3">
+                                <div class="me-3">
+                                    <i class="fas fa-users fa-2x text-warning"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-2">🔹 Consultoría GIS Especializada</h5>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <div class="border-start border-3 border-warning ps-3 mb-3">
+                                    <h6 class="fw-bold mb-1">Asesoría técnica en proyectos GIS</h6>
+                                    <p class="text-muted small mb-0">👉 Evita errores comunes y optimiza recursos desde el inicio.</p>
+                                </div>
+                                <div class="border-start border-3 border-primary ps-3">
+                                    <h6 class="fw-bold mb-1">Soporte técnico y mejora de flujos de trabajo</h6>
+                                    <p class="text-muted small mb-0">👉 Procesos más rápidos, ordenados y eficientes.</p>
+                                </div>
+                            </div>
+
+                            <div class="d-flex gap-2 flex-wrap">
+                                <span class="skill-badge">Consultoría</span>
+                                <span class="skill-badge">Análisis</span>
+                                <span class="skill-badge">Optimización</span>
+                                <span class="skill-badge">Soporte</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Software Engineering Services -->
+            <div class="mb-5">
+                <div class="row align-items-center mb-4">
+                    <div class="col-lg-8">
+                        <h3 class="gradient-text mb-2">💻 Servicios de Ingeniería de Sistemas</h3>
+                        <p class="lead text-muted">
+                            Soluciones tecnológicas enfocadas en eficiencia, escalabilidad y automatización, alineadas a las necesidades reales del negocio.
+                        </p>
+                    </div>
+                    <div class="col-lg-4 text-lg-end">
+                        <i class="fas fa-laptop-code fa-4x text-primary opacity-75"></i>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <!-- Desarrollo de Software -->
+                    <div class="col-lg-6 col-md-12">
+                        <div class="tech-card h-100">
+                            <div class="d-flex align-items-start mb-3">
+                                <div class="me-3">
+                                    <i class="fas fa-code fa-2x text-primary"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-2">🔹 Desarrollo de Software</h5>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <div class="border-start border-3 border-primary ps-3 mb-3">
+                                    <h6 class="fw-bold mb-1">Aplicaciones backend con Node.js</h6>
+                                    <p class="text-muted small mb-0">👉 Sistemas rápidos, seguros y preparados para crecer.</p>
+                                </div>
+                                <div class="border-start border-3 border-info ps-3">
+                                    <h6 class="fw-bold mb-1">Integración con bases de datos SQL Server y PostgreSQL</h6>
+                                    <p class="text-muted small mb-0">👉 Información estructurada, confiable y de alto rendimiento.</p>
+                                </div>
+                            </div>
+
+                            <div class="d-flex gap-2 flex-wrap">
+                                <span class="skill-badge">Node.js</span>
+                                <span class="skill-badge">.NET Core</span>
+                                <span class="skill-badge">React</span>
+                                <span class="skill-badge">SQL Server</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Automatización -->
+                    <div class="col-lg-6 col-md-12">
+                        <div class="tech-card h-100">
+                            <div class="d-flex align-items-start mb-3">
+                                <div class="me-3">
+                                    <i class="fas fa-robot fa-2x text-success"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-2">🔹 Automatización y Optimización de Procesos</h5>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <div class="border-start border-3 border-success ps-3 mb-3">
+                                    <h6 class="fw-bold mb-1">Automatización de tareas y flujos operativos</h6>
+                                    <p class="text-muted small mb-0">👉 Ahorra tiempo, reduce errores y aumenta la productividad.</p>
+                                </div>
+                                <div class="border-start border-3 border-warning ps-3">
+                                    <h6 class="fw-bold mb-1">Optimización de procesos existentes</h6>
+                                    <p class="text-muted small mb-0">👉 Mejora el rendimiento sin necesidad de rehacer todo desde cero.</p>
+                                </div>
+                            </div>
+
+                            <div class="d-flex gap-2 flex-wrap">
+                                <span class="skill-badge">Python</span>
+                                <span class="skill-badge">Automatización</span>
+                                <span class="skill-badge">DevOps</span>
+                                <span class="skill-badge">CI/CD</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Consultoría en Sistemas -->
+                    <div class="col-lg-12 col-md-12">
+                        <div class="tech-card h-100">
+                            <div class="d-flex align-items-start mb-3">
+                                <div class="me-3">
+                                    <i class="fas fa-lightbulb fa-2x text-warning"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-2">🔹 Consultoría en Sistemas</h5>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+                                    <div class="border-start border-3 border-warning ps-3">
+                                        <h6 class="fw-bold mb-1">Análisis y mejora de arquitecturas tecnológicas</h6>
+                                        <p class="text-muted small mb-0">👉 Soluciones sostenibles y alineadas con los objetivos del negocio.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="border-start border-3 border-info ps-3">
+                                        <h6 class="fw-bold mb-1">Asesoría técnica y acompañamiento profesional</h6>
+                                        <p class="text-muted small mb-0">👉 Toma decisiones con respaldo técnico y visión estratégica.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="d-flex gap-2 flex-wrap">
+                                <span class="skill-badge">Arquitectura</span>
+                                <span class="skill-badge">Cloud Computing</span>
+                                <span class="skill-badge">Microservicios</span>
+                                <span class="skill-badge">Estrategia Tech</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="tech-card text-center">
+                        <h4 class="gradient-text mb-3">¿Necesitas alguno de estos servicios?</h4>
+                        <p class="text-muted mb-4">
+                            Conversemos sobre tu proyecto y cómo puedo ayudarte a alcanzar tus objetivos tecnológicos.
+                        </p>
+                        <div class="d-flex gap-3 justify-content-center flex-wrap">
+                            <a href="#contact" class="btn btn-primary btn-lg">
+                                <i class="fas fa-comments me-2"></i>Conversemos
+                            </a>
+                            <a href="mailto:geoinformatico.jc@gmail.com" class="btn btn-outline-primary btn-lg">
+                                <i class="fas fa-envelope me-2"></i>Enviar Email
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section-->
+    <section class="py-5 bg-light" id="experience">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-heading">Experiencia Profesional</h2>
+                <p class="text-muted">Mi trayectoria profesional en tecnología</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <!-- NTTDATA Experience -->
+                    <div class="d-flex mb-4">
+                        <div class="flex-shrink-0 me-4">
+                            <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" 
+                                 style="width: 60px; height: 60px;">
+                                <i class="fas fa-code"></i>
+                            </div>
+                        </div>
+                        <div class="flex-grow-1">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h4 class="mb-0">Developer Oracle .NET</h4>
+                                <span class="badge bg-primary">Actual</span>
+                            </div>
+                            <h6 class="text-primary mb-2">NTTDATA | Feb 2022 - Actualidad</h6>
+                            <p class="text-muted mb-3">
+                                Desarrollo y mantenimiento de aplicaciones empresariales usando .NET y Oracle. 
+                                Implementación de arquitecturas limpias, APIs RESTful y integración con servicios cloud.
+                            </p>
+                            <div class="d-flex gap-2 flex-wrap">
+                                <span class="skill-badge">.NET Core</span>
+                                <span class="skill-badge">Oracle</span>
+                                <span class="skill-badge">Azure</span>
+                                <span class="skill-badge">DevOps</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CM2 Experience -->
+                    <div class="d-flex mb-4">
+                        <div class="flex-shrink-0 me-4">
+                            <div class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center" 
+                                 style="width: 60px; height: 60px;">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                        </div>
+                        <div class="flex-grow-1">
+                            <h4 class="mb-0">Programador .NET</h4>
+                            <h6 class="text-success mb-2">CM2 INGENIERÍA | Mar 2021 - Sep 2021</h6>
+                            <p class="text-muted mb-3">
+                                Desarrollo de sistemas de gestión empresarial, aplicaciones GIS para topografía 
+                                y automatización de procesos usando C#, Python y tecnologías web.
+                            </p>
+                            <div class="d-flex gap-2 flex-wrap">
+                                <span class="skill-badge">C#</span>
+                                <span class="skill-badge">Python</span>
+                                <span class="skill-badge">SQL Server</span>
+                                <span class="skill-badge">GIS</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Other relevant experiences -->
+                    <div class="text-center">
+                        <button class="btn btn-outline-primary" type="button" data-bs-toggle="collapse" 
+                                data-bs-target="#moreExperience" aria-expanded="false">
+                            Ver más experiencia <i class="fas fa-chevron-down ms-1"></i>
+                        </button>
+                    </div>
+
+                    <div class="collapse mt-4" id="moreExperience">
+                        <!-- AECOM, IGN, etc. - condensed version -->
+                        <div class="d-flex mb-4">
+                            <div class="flex-shrink-0 me-4">
+                                <div class="bg-info text-white rounded-circle d-flex align-items-center justify-content-center" 
+                                     style="width: 60px; height: 60px;">
+                                    <i class="fas fa-globe"></i>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1">
+                                <h4 class="mb-0">Especialista GIS</h4>
+                                <h6 class="text-info mb-2">AECOM | Jul 2019 - Sep 2020</h6>
+                                <p class="text-muted mb-3">
+                                    Producción cartográfica y desarrollo de geodatabases para proyectos de 
+                                    reconstrucción nacional. Especialización en análisis geoespacial.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex mb-4">
+                            <div class="flex-shrink-0 me-4">
+                                <div class="bg-info text-white rounded-circle d-flex align-items-center justify-content-center" 
+                                     style="width: 60px; height: 60px;">
+                                    <i class="fas fa-map-marked-alt"></i>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1">
+                                <h4 class="mb-0">Especialista en Sistemas de Información Geográfica</h4>
+                                <h6 class="text-info mb-2">IGN | Ago 2019 - Dic 2019</h6>
+                                <p class="text-muted mb-3">
+                                    Elaboración de cartografía y desarrollo de bases de datos geográficas para la Visor Web.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex mb-4">
+                            <div class="flex-shrink-0 me-4">
+                                <div class="bg-info text-white rounded-circle d-flex align-items-center justify-content-center" 
+                                     style="width: 60px; height: 60px;">
+                                    <i class="fas fa-camera-retro"></i>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1">
+                                <h4 class="mb-0">Procesador de Imágenes RPAS</h4>
+                                <h6 class="text-info mb-2">AEROCAM | Set 2017 - Oct 2017</h6>
+                                <p class="text-muted mb-3">
+                                    Asistencia en vuelos fotogramétricos y procesamiento de imágenes para generación de ortofotos.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex mb-4">
+                            <div class="flex-shrink-0 me-4">
+                                <div class="bg-info text-white rounded-circle d-flex align-items-center justify-content-center" 
+                                     style="width: 60px; height: 60px;">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1">
+                                <h4 class="mb-0">Revisor GIS</h4>
+                                <h6 class="text-info mb-2">CORSUYO | Feb 2019 - Jul 2019</h6>
+                                <p class="text-muted mb-3">
+                                    Revisión y validación de información geográfica para planes de acondicionamiento territorial.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section-->
+    <section class="py-5" id="skills">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-heading">Stack Tecnológico</h2>
+                <p class="text-muted">Tecnologías y herramientas que domino</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Frontend -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="text-center">
+                        <div class="mb-3">
+                            <i class="fab fa-react fa-3x text-info mb-3"></i>
+                            <h5>Frontend</h5>
+                        </div>
+                        <div class="d-flex flex-wrap justify-content-center gap-2">
+                            <span class="skill-badge">React</span>
+                            <span class="skill-badge">Vue.js</span>
+                            <span class="skill-badge">Angular</span>
+                            <span class="skill-badge">TypeScript</span>
+                            <span class="skill-badge">JavaScript</span>
+                            <span class="skill-badge">HTML5</span>
+                            <span class="skill-badge">CSS3</span>
+                            <span class="skill-badge">Sass</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="text-center">
+                        <div class="mb-3">
+                            <i class="fas fa-server fa-3x text-success mb-3"></i>
+                            <h5>Backend</h5>
+                        </div>
+                        <div class="d-flex flex-wrap justify-content-center gap-2">
+                            <span class="skill-badge">.NET Core</span>
+                            <span class="skill-badge">Node.js</span>
+                            <span class="skill-badge">Python</span>
+                            <span class="skill-badge">C#</span>
+                            <span class="skill-badge">Java</span>
+                            <span class="skill-badge">PHP</span>
+                            <span class="skill-badge">API REST</span>
+                            <span class="skill-badge">GraphQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cloud & DevOps -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="text-center">
+                        <div class="mb-3">
+                            <i class="fas fa-cloud fa-3x text-primary mb-3"></i>
+                            <h5>Cloud & DevOps</h5>
+                        </div>
+                        <div class="d-flex flex-wrap justify-content-center gap-2">
+                            <span class="skill-badge">AWS</span>
+                            <span class="skill-badge">Azure</span>
+                            <span class="skill-badge">Google Cloud</span>
+                            <span class="skill-badge">Docker</span>
+                            <span class="skill-badge">Kubernetes</span>
+                            <span class="skill-badge">Jenkins</span>
+                            <span class="skill-badge">Git</span>
+                            <span class="skill-badge">CI/CD</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data & AI -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="text-center">
+                        <div class="mb-3">
+                            <i class="fas fa-brain fa-3x text-warning mb-3"></i>
+                            <h5>Data & AI</h5>
+                        </div>
+                        <div class="d-flex flex-wrap justify-content-center gap-2">
+                            <span class="skill-badge">Python</span>
+                            <span class="skill-badge">TensorFlow</span>
+                            <span class="skill-badge">PyTorch</span>
+                            <span class="skill-badge">OpenAI API</span>
+                            <span class="skill-badge">Pandas</span>
+                            <span class="skill-badge">NumPy</span>
+                            <span class="skill-badge">SQL</span>
+                            <span class="skill-badge">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GIS Technologies -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="text-center mb-4">
+                        <h5><i class="fas fa-globe me-2 text-success"></i>Tecnologías GIS</h5>
+                    </div>
+                    <div class="d-flex flex-wrap justify-content-center gap-2">
+                        <span class="skill-badge">ArcGIS</span>
+                        <span class="skill-badge">QGIS</span>
+                        <span class="skill-badge">PostGIS</span>
+                        <span class="skill-badge">Leaflet</span>
+                        <span class="skill-badge">OpenLayers</span>
+                        <span class="skill-badge">GeoServer</span>
+                        <span class="skill-badge">GDAL</span>
+                        <span class="skill-badge">Mapbox</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section-->
+    <section class="py-5 bg-dark text-white" id="contact">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="section-heading text-white mb-4">¿Trabajamos Juntos?</h2>
+                    <p class="lead mb-5">
+                        Estoy disponible para proyectos freelance, consultoría tecnológica o nuevas oportunidades laborales.
+                    </p>
+                    <div class="row text-center">
+                        <div class="col-md-4 mb-4">
+                            <div class="mb-3">
+                                <i class="fas fa-envelope fa-2x text-primary mb-2"></i>
+                                <h5>Email</h5>
+                                <a href="mailto:geoinformatico.jc@gmail.com" class="text-light">geoinformatico.jc@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="mb-3">
+                                <i class="fab fa-linkedin fa-2x text-primary mb-2"></i>
+                                <h5>LinkedIn</h5>
+                                <a href="#" class="text-light">linkedin.com/in/joelcollao</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="mb-3">
+                                <i class="fab fa-github fa-2x text-primary mb-2"></i>
+                                <h5>GitHub</h5>
+                                <a href="https://github.com/JoelCollao" class="text-light">github.com/JoelCollao</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <a href="mailto:geoinformatico.jc@gmail.com" class="btn btn-primary btn-lg me-3">
+                            <i class="fas fa-envelope me-2"></i>Enviar Email
+                        </a>
+                        <a href="#" class="btn btn-outline-light btn-lg">
+                            <i class="fas fa-download me-2"></i>Descargar CV
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer-->
-    <footer class="footer py-4">
+    <footer class="footer py-4 bg-light">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-4 text-lg-start">Copyright &copy; Website 2021 - DevGeo</div>
-                <div class="col-lg-4 my-3 my-lg-0">
-                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                <div class="col-lg-4 text-lg-start">
+                    <div class="code-font fw-bold">Joel.dev © 2024</div>
+                </div>
+                <div class="col-lg-4 my-3 my-lg-0 text-center">
+                    <a class="btn btn-dark btn-social mx-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="#"><i class="fab fa-github"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="#"><i class="fab fa-twitter"></i></a>
                 </div>
                 <div class="col-lg-4 text-lg-end">
-                    <!-- <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
-                        <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>-->
+                    <span class="text-muted small">Hecho con ❤️ y mucho ☕</span>
                 </div>
             </div>
         </div>
     </footer>
-    <!-- Portfolio Modals-->
-    <!-- Portfolio item 1 modal popup-->
 
+    <!-- Portfolio Modals - Updated -->
     <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg"
-                        alt="Close modal" /></div>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <div class="modal-body">
-                                <!-- Project details-->
-                                <h2 class="text-uppercase">CM2 INGENIERIA</h2>
-                                <p class="item-intro text-muted">Rubro Ingeniería Topográfica.</p>
-                                <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/1.JPG" alt="...." />
-                                <p> CM2 es un ingeniería especializada en el campo de la topografía , cartografía y
-                                    geodesia</p>
-                                <ul class="list-inline">
-
-                                    <li>
-                                        <strong>Lenguaje de Programación:</strong> PHP
-                                    </li>
-                                    <li>
-                                        <strong>Entorno de Desarrollo:</strong> CMS Wordpress
-                                    </li>
-                                    <li>
-                                        <strong>Base de Datos:</strong> MySQL
-                                    </li>
-                                    <li>
-                                        <strong>Pagina:</strong>
-                                        <a href="https://www.cm2.pe/" target="_blank">https://www.cm2.pe/</a>
-                                    </li>
-
-                                </ul>
-                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
-                                    type="button">
-                                    <i class="fas fa-times me-1"></i>
-                                    Cerrar Ventana
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                <div class="modal-header">
+                    <h5 class="modal-title">Plataforma GIS Cloud</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
-            </div>
-        </div>
-    </div>
-    <!-- Portfolio item 2 modal popup-->
-    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg"
-                        alt="Close modal" /></div>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <div class="modal-body">
-                                <!-- Project details-->
-                                <h2 class="text-uppercase">Desarrollo de Aplicativo Facturación</h2>
-                                <p class="item-intro text-muted">Aplicativo Escritorio en C#.</p>
-                                <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/2.JPG" alt="..." />
-                                <p> Desarrollo de un Aplicativo que permita realizar el Registro de Clientes ,
-                                    proveedores
-                                    y Facturas, asi como el reporte de Ofertas de Contratación.</p>
-                                <ul class="list-inline">
-                                    <li>
-                                        <strong>Lenguaje de Programación:</strong> C#
-                                    </li>
-                                    <li>
-                                        <strong>Entorno de Desarrollo:</strong> Microsoft Visual Studio
-                                    </li>
-                                    <li>
-                                        <strong>Base de Datos:</strong> SQL Server / Access
-                                    </li>
-                                    <li>
-                                        <strong>Repositorio GitHub:</strong> <a href="https://github.com/JoelCollao/Sistema_de_Facturacion" target="_blank">Aplicativo de
-                                            Facturación</a>
-                                    </li>
-                                </ul>
-                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
-                                    type="button">
-                                    <i class="fas fa-times me-1"></i>
-                                    Cerrar Ventana
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Portfolio item 3 modal popup-->
-    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg"
-                        alt="Close modal" /></div>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <div class="modal-body">
-                                <!-- Project details-->
-                                <h2 class="text-uppercase">Aplicativo de Reseñas Geodesicas</h2>
-                                <p class="item-intro text-muted">Aplicativo de Escritorio C#.</p>
-                                <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/3.JPG" alt="..." />
-                                <p>Aplicativo la generació automática de Reseñas Geodesicas , conectadas a un base de
-                                    datos SQ</p>
-                                <ul class="list-inline">
-                                    <li>
-                                        <strong>Lenguaje Programación:</strong>Visual Basic
-                                    </li>
-                                    <li>
-                                        <strong>Entorno de Desarrollo:</strong>
-                                        Microsoft Visual Studio 2019
-                                    </li>
-                                    <li>
-                                        <strong>Base de Datos:</strong>
-                                        SQL Server
-                                    </li>
-                                    <li>
-                                        <strong>Repositorio GitHub:</strong> <a href="https://github.com/JoelCollao/Aplicativo_Resenas_Geodesicas" target="_blank">Aplicativo de Reseñas
-                                            Geodésicas</a>
-                                    </li>
-                                </ul>
-                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
-                                    type="button">
-                                    <i class="fas fa-times me-1"></i>
-                                    Cerrar Ventana
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Portfolio item 4 modal popup-->
-    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg"
-                        alt="Close modal" /></div>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <div class="modal-body">
-                                <!-- Project details-->
-                                <h2 class="text-uppercase">Project Name</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/4.jpg" alt="..." />
-                                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur
-                                    adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt
-                                    repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae,
-                                    nostrum, reiciendis facere nemo!</p>
-                                <ul class="list-inline">
-                                    <li>
-                                        <strong>Client:</strong>
-                                        Lines
-                                    </li>
-                                    <li>
-                                        <strong>Category:</strong>
-                                        Branding
-                                    </li>
-                                </ul>
-                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
-                                    type="button">
-                                    <i class="fas fa-times me-1"></i>
-                                    Close Project
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Portfolio item 5 modal popup-->
-    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg"
-                        alt="Close modal" /></div>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <div class="modal-body">
-                                <!-- Project details-->
-                                <h2 class="text-uppercase">Project Name</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/5.jpg" alt="..." />
-                                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur
-                                    adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt
-                                    repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae,
-                                    nostrum, reiciendis facere nemo!</p>
-                                <ul class="list-inline">
-                                    <li>
-                                        <strong>Client:</strong>
-                                        Southwest
-                                    </li>
-                                    <li>
-                                        <strong>Category:</strong>
-                                        Website Design
-                                    </li>
-                                </ul>
-                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
-                                    type="button">
-                                    <i class="fas fa-times me-1"></i>
-                                    Close Project
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Portfolio item 6 modal popup-->
-    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg"
-                        alt="Close modal" /></div>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <div class="modal-body">
-                                <!-- Project details-->
-                                <h2 class="text-uppercase">Project Name</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/6.jpg" alt="..." />
-                                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur
-                                    adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt
-                                    repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae,
-                                    nostrum, reiciendis facere nemo!</p>
-                                <ul class="list-inline">
-                                    <li>
-                                        <strong>Client:</strong>
-                                        Window
-                                    </li>
-                                    <li>
-                                        <strong>Category:</strong>
-                                        Photography
-                                    </li>
-                                </ul>
-                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
-                                    type="button">
-                                    <i class="fas fa-times me-1"></i>
-                                    Close Project
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                <div class="modal-body">
+                    <img class="img-fluid mb-4" src="assets/img/portfolio/1.JPG" alt="Plataforma GIS Cloud" />
+                    <p class="lead">Aplicación web moderna para análisis geoespacial en tiempo real.</p>
+                    <p>
+                        Esta plataforma permite a los usuarios cargar, procesar y analizar datos geográficos 
+                        en la nube con capacidades de visualización interactiva y análisis avanzado.
+                    </p>
+                    <h6>Tecnologías Utilizadas:</h6>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-check text-success me-2"></i>React + TypeScript</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Node.js + Express</li>
+                        <li><i class="fas fa-check text-success me-2"></i>PostGIS + PostgreSQL</li>
+                        <li><i class="fas fa-check text-success me-2"></i>AWS (EC2, S3, RDS)</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Docker + Kubernetes</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Archivo para QUE LAS LETRAS SE MUEVAN   CDN    https://github.com/mattboldt/typed.js/-->
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Typed.js initialization
+        var typed = new Typed('.typed', {
+            strings: [
+                'Full Stack Developer', 
+                'GIS Specialist', 
+                'Cloud Architect', 
+                'AI Enthusiast',
+                'DevOps Engineer'
+            ],
+            typeSpeed: 60,
+            backSpeed: 40,
+            loop: true,
+            showCursor: true,
+            cursorChar: '|'
+        });
 
-    <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-    <!-- * *                               SB Forms JS                               * *-->
-    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('mainNav');
+            if (window.scrollY > 50) { // Reducido de 100 a 50
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
 
+        // Active nav link highlighting con offset ajustado
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+        function highlightNavLink() {
+            let current = '';
+            const navbarHeight = document.getElementById('mainNav').offsetHeight;
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - navbarHeight - 30; // Ajustar offset
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', highlightNavLink);
+
+        // Smooth scrolling con offset mejorado
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const navbarHeight = document.getElementById('mainNav').offsetHeight;
+                    const targetPosition = target.offsetTop - navbarHeight - 10; // 10px de margen extra
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add hover effects to project cards
+        document.querySelectorAll('.project-card').forEach(card => {
+            const overlay = card.querySelector('.position-absolute');
+            if (overlay) {
+                card.addEventListener('mouseenter', () => {
+                    overlay.style.opacity = '1';
+                });
+                card.addEventListener('mouseleave', () => {
+                    overlay.style.opacity = '0';
+                });
+            }
+        });
+
+        // Add rotation animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes rotate {
+                from { transform: rotate(0deg); }
+                to { transform: rotate(360deg); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
 </body>
 
 </html>
